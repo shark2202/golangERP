@@ -1,0 +1,21 @@
+#ignore compile file
+
+
+.project
+*.exe
+*.exe~
+settings.json
+golangERP.*
+debug
+debug~
+settings.json
+.idea
+logs/*.log
+/conf/app.conf
+#vue2+webpack2生成的文件
+static/pc
+static/mobile
+/views
+web_pc/node_modules
+web_mobile/node_modules
+/web_pc/static/
