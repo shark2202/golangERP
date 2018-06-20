@@ -2,12 +2,14 @@ package initalActions
 
 import (
 	md "golangERP/models"
-
+	"golangERP/utils"
 	"github.com/astaxie/beego/orm"
 )
 
 // InitGroupMenu 权限菜单初始化
 func InitGroupMenu() {
+	utils.LogOut("info", "InitGroupMenu start")
+	
 	query := make(map[string]interface{})
 	exclude := make(map[string]interface{})
 	cond := make(map[string]map[string]interface{})
@@ -24,6 +26,8 @@ func InitGroupMenu() {
 			go groupMenu(group)
 		}
 	}
+
+	utils.LogOut("info", "InitGroupMenu over")
 }
 
 //某个权限的菜单

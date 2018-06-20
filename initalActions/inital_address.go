@@ -31,6 +31,8 @@ func InitCountry2DB(filePath string) {
 		if data, err := ioutil.ReadAll(file); err == nil {
 			var initCountries InitCountries
 			if xml.Unmarshal(data, &initCountries) == nil {
+
+				
 				ormObj := orm.NewOrm()
 				var moduleName = "AddressCountry"
 				for _, countryXML := range initCountries.Countries {

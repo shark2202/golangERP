@@ -8,6 +8,7 @@ import (
 
 // InitApp 基础数据插入
 func InitApp() {
+	return
 	systemType := runtime.GOOS
 	split := "/"
 	switch systemType {
@@ -17,6 +18,9 @@ func InitApp() {
 		split = "/"
 	}
 	if xmlDir, err := os.Getwd(); err == nil {
+		
+		utils.LogOut("info", "InitApp start")
+
 		xmlBase := utils.StringsJoin(xmlDir, split, "inital_data", split, "xml")
 		// 国家信息
 		countryXML := utils.StringsJoin(xmlBase, split, "address", split, "Countries.xml")
@@ -47,5 +51,6 @@ func InitApp() {
 		//菜单初始化
 		InitMenus2DB(split)
 
+		utils.LogOut("info", "InitApp over")
 	}
 }

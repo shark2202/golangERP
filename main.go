@@ -35,11 +35,14 @@ func init() {
 
 	//自动建表
 	orm.RunSyncdb(dbAlias, coverDb, true)
+	orm.Debug = true
 
 	// 加载权限控制文件
 	// LoadSecurity()
 	// 初始化cache
 	utils.InitCache()
+
+	utils.LogOut("info", "InitCache end")
 	// 初始化数据
 	initalActions.InitApp()
 	// 初始化权限菜单，从数据库中获取按权限组区分放到全局变量中（后期考虑放到redis中），加快访问速度

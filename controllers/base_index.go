@@ -10,8 +10,8 @@ type IndexController struct {
 }
 
 func (c *IndexController) Get() {
-	c.Data["Website"] = "golangERP"
-	c.Data["Email"] = "272685110@qq.com"
+	c.Data["Website"] = "123456"
+	c.Data["Email"] = "1234"
 	typeMap := map[string]string{"windows": "pc", "android": "mobile", "linux": "pc", "iphone": "mobile"}
 	accessType := "pc"
 	// 判断访问类型是pc还是移动端，根据不同的终端选择不同的页面，默认为pc端

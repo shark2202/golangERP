@@ -28,6 +28,7 @@ func InitCache() {
 }
 
 func initMemcache() {
+	LogOut("info", "缓存采用的是memcache")
 	var err error
 	cc, err = cache.NewCache("memcache", StringsJoin(`{"conn":"`, beego.AppConfig.String("cache::memcache_host"), `"}`))
 

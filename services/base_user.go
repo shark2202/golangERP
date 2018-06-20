@@ -96,12 +96,13 @@ func ServiceUserLogin(username string, password string) (*md.User, bool) {
 	cond = cond.And("active", true).And("Name", username).Or("Email", username).Or("Mobile", username)
 	qs := o.QueryTable(&user)
 	qs = qs.SetCond(cond)
+
 	if err = qs.One(&user); err == nil {
 		if user.Password == utils.PasswordMD5(password, user.Mobile) {
 			ok = true
-
 		}
 	}
+	utils.LogOut("info", ok)
 	return &user, ok
 }
 
